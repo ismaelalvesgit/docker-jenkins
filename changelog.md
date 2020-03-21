@@ -11,7 +11,7 @@
 -  Merged Groovy with Gradle pattern
 
 # v.0.3.0:
--  Automação de backups e Recovery. 
+-  Automação de backups e Recovery. caso de algum erro de permissão user o comando chmod -R 777 /my/pah
 
 # v.0.2.0:
 -  plugins inseridos na imagem. 

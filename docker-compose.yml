@@ -2,12 +2,22 @@ version: '3'
 
 services: 
   jenkins:
-    build: ./v.0.2.0
+    build: ./v.0.3.0
     container_name: jenkins
     restart: always
+    volumes: 
+      - ./jenkins_home_3:/var/jenkins_home
+      - ./jenkins_backup_3:/srv/backup
     ports: 
       - 8080:8080
       - 50000:50000
+  # jenkins:
+  #   build: ./v.0.2.0
+  #   container_name: jenkins
+  #   restart: always
+  #   ports: 
+  #     - 8080:8080
+  #     - 50000:50000
   # jenkins:
   #   build: ./v.0.1.0
   #   container_name: jenkins

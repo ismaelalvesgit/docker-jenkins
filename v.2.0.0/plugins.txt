@@ -14,7 +14,7 @@ workflow-support:3.4
 build-name-setter:2.0.4
 gitlab-hook:1.4.2
 saferestart:0.3
-build-pipeline-plugin:1.5.7.1
+build-pipeline-plugin:1.5.8
 jenkins-design-language:1.22.0
 jdk-tool:1.4
 active-directory:2.16
