@@ -10,6 +10,9 @@
 # v.2.2.0:
 -  Merged Groovy with Gradle pattern
 
+# v.0.4.0:
+-  Import de configurações e skip da tela de apresentação
+
 # v.0.3.0:
 -  Automação de backups e Recovery. caso de algum erro de permissão user o comando chmod -R 777 /my/pah
 
