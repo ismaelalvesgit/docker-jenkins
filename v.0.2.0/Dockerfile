@@ -1,5 +1,5 @@
 # @Author Ismael Alves
-FROM jenkins/jenkins
+FROM jenkins/jenkins:lts
 USER root
 RUN apt-get update && apt-get install -y make git openjdk-8-jdk
 USER jenkins
