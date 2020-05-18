@@ -19,7 +19,6 @@ RUN add-apt-repository \
 RUN apt-get update  -qq \
     && apt-get install docker-ce=17.12.1~ce-0~debian -y
 RUN usermod -aG docker jenkins
-
 # Docker-compose
 RUN curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose
@@ -28,6 +27,8 @@ RUN apt-get install -y make git openjdk-8-jdk && rm -rf /var/lib/apt/lists/*
 # Node js
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
     && apt-get install -y gcc g++ make nodejs
+#sshpass
+RUN apt-get install sshpass
 # Backup & Recover
 RUN mkdir /srv/backup && chown jenkins:jenkins /srv/backup
 
