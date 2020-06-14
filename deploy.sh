@@ -12,3 +12,6 @@ docker push ismaelalvesdoc:${$versao}
 echo "<====================== Enviando imagem na última versão para o repositorio ======================>"
 docker push ismaelalvesdoc
 echo "<====================== Deploy Finalizado ======================>"
+echo "<============ Iniciando clear Images dangling ==============>"
+docker rmi --force $(docker images -q --filter "dangling=true")
+echo "<============ Finalizando clear Images dangling ==============>"

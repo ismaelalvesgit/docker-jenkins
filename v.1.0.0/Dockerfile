@@ -1,6 +1,6 @@
 # @ Author Ismael Alves
 
-FROM jenkins/jenkins
+FROM jenkins/jenkins:lts
 
 LABEL maintainer="Ismael Alves cearaismael1997@gmail.com"
 ARG master_image_version="v.2.2.2"
@@ -8,6 +8,10 @@ ENV master_image_version $master_image_version
 
 # Platforms Install
 USER root
+
+# Update jenkins
+RUN  wget http://updates.jenkins-ci.org/download/war/2.240/jenkins.war \
+&& mv ./jenkins.war /usr/share/jenkins
 # Docker
 RUN apt-get update -qq \
     && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common 
@@ -18,6 +22,7 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update  -qq \
     && apt-get install docker-ce=17.12.1~ce-0~debian -y
+# User jenkins
 RUN usermod -aG docker jenkins
 # Docker-compose
 RUN curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose \
