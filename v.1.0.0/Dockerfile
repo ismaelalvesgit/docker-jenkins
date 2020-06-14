@@ -27,8 +27,11 @@ RUN apt-get install -y make git openjdk-8-jdk && rm -rf /var/lib/apt/lists/*
 # Node js
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
     && apt-get install -y gcc g++ make nodejs
-#sshpass
+# Sshpass
 RUN apt-get install sshpass
+#Snyk
+RUN npm i -g snyk
+
 # Backup & Recover
 RUN mkdir /srv/backup && chown jenkins:jenkins /srv/backup
 
